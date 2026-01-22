@@ -59,6 +59,8 @@ attn = flash_attn_func(q, k, v)
 nh = attn.size(1)
 attn1, attn2 = (attn[:, :nh//2], 
 		          attn[:, nh//2:])
+# similarly, also wrong implementation:
+# attn1, attn2 = attn.chunk(2, dim=1)
 ...
 ```
 
